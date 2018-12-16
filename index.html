@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>论坛管理系统</title>
     <link rel="stylesheet" href="./static/common/main.css">
+    <link rel="stylesheet" href="./static/common/jquery.bxslider.css">
     <link rel="stylesheet" href="./static/css/index.css">
 </head>
 
@@ -21,45 +22,161 @@
             <input type="submit" class="btn btn-orange" value="搜索">
         </form>
         <div class="right">
-            <button class="btn btn-green">登录</button>
+            <button class="btn btn-green" id="user-login">登录</button>
         </div>
         <div class="nbtn">
-            <button class="btn btn-green">注册</button>
+            <button class="btn btn-green" id="user-reg">注册</button>
         </div>
     </nav>
-    <div class="is-white"></div>
-    <div class="row">
-        <div class="col3">
-            <div class="item">
-                <div class="card full">
-
-                </div>
-            </div>
-        </div>
-        <div class="col9">
-            <div class="item">
-                <div class="card full">
-                    <div id="banner">
-                        <img src="./static/images/1.png">
-                        <img src="./static/images/2.png">
-                        <img src="./static/images/3.png">
-                        <img src="./static/images/4.png">
-                        <img src="./static/images/5.png">
-                        <img src="./static/images/6.png">
-                        <img src="./static/images/7.png">
-                        <img src="./static/images/8.png">
-                        <img src="./static/images/9.png">
+    <main>
+        <div class="row">
+            <div class="col8">
+                <div class="card">
+                    <div class="slider">
+                        <div class="slide">
+                            <img src="./static/images/1.png" title="名菜">
+                        </div>
+                        <div class="slide">
+                            <img src="./static/images/2.png" title="名菜">
+                        </div>
+                        <div class="slide">
+                            <img src="./static/images/3.png" title="名菜">
+                        </div>
+                        <div class="slide">
+                            <img src="./static/images/4.png" title="名菜">
+                        </div>
+                        <div class="slide">
+                            <img src="./static/images/5.png" title="名菜">
+                        </div>
+                        <div class="slide">
+                            <img src="./static/images/6.png" title="名菜">
+                        </div>
+                        <div class="slide">
+                            <img src="./static/images/7.png" title="名菜">
+                        </div>
+                        <div class="slide">
+                            <img src="./static/images/8.png" title="名菜">
+                        </div>
+                        <div class="slide">
+                            <img src="./static/images/9.png" title="名菜">
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col4">
+                <div class="card card-full center">
+                    共有<i class="green">6666</i>个帖子
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col3">
+                <div class="card">
+                    <p>论坛分类</p>
+                    <div class="kind">
+                        <a href="#">娱乐明星</a>
+                        <a href="#">爱综艺</a>
+                        <a href="#">追剧狂</a>
+                        <a href="#">看电影</a>
+                        <a href="#">体育</a>
+                        <a href="#">小说</a>
+                        <a href="#">生活家</a>
+                        <a href="#">闲·趣</a>
+                        <a href="#">高校</a>
+                        <a href="#">地区</a>
+                        <a href="#">人文自然</a>
+                        <a href="#">萌宠</a>
+                        <a href="#">游戏</a>
+                        <a href="#">音乐</a>
+                        <a href="#">追星族</a>
+                        <a href="#">教育</a>
+                        <a href="#">金融</a>
+                        <a href="#">企业</a>
+                        <a href="#">历史</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <p>精彩帖子</p>
+
+                </div>
+            </div>
+            <div class="col9">
+                <div class="card">
+                    <p>最新帖子</p>
+                </div>
+                <div class="card">
+                    <p>全部帖子</p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
+<div class="popup-html" id="popup-login">
+    <form id="login">
+        <div class="row">
+            <div class="col2 label">用户名</div>
+            <div class="col8">
+                <input type="text" name="username" placeholder="请输入用户名" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2 label">密码</div>
+            <div class="col8">
+                <input type="password" name="password" placeholder="请输入密码" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2"></div>
+            <div class="col4">
+                <input type="submit" value="立即登录" class="btn btn-blue">
+            </div>
+            <div class="col6 reg">
+                <span class="black">没有账号?</span>
+                <a href="javascript:now_reg();" class="blue">立即注册</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="popup-html" id="popup-reg">
+    <form id="reg">
+        <div class="row">
+            <div class="col2 label">用户名</div>
+            <div class="col8">
+                <input type="text" name="username" placeholder="请输入用户名" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2 label">密码</div>
+            <div class="col8">
+                <input type="password" name="password1" placeholder="请输入密码" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2 label">确认密码</div>
+            <div class="col8">
+                <input type="password" name="password2" placeholder="请再次输入密码" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2"></div>
+            <div class="col4">
+                <input type="submit" value="立即注册" class="btn btn-green">
+            </div>
+            <div class="col6 login">
+                <span class="black">已有账号?</span>
+                <a href="javascript:now_login();" class="blue">立即登录</a>
+            </div>
+        </div>
+    </form>
+</div>
+
 <script src="./static/common/jquery.js"></script>
 <script src="./static/common/function.js"></script>
 <script src="./static/common/layer/layer.js"></script>
 <script src="./static/common/popup.js"></script>
-<script src="./static/common/banner.js"></script>
+<script src="./static/common/jquery.bxslider.js"></script>
 <script src="./static/common/main.js"></script>
 <script src="./static/js/index.js"></script>
 

@@ -38,6 +38,16 @@ var popup = {
         } else {
             layer.close(index);
         }
+    },
+
+    html: function (id, width, height, title) {
+        layer.open({
+            type: 1,
+            title: title,
+            skin: 'layui-layer-rim',
+            area: [width + 'px', height + 'px'],
+            content: $('#' + id)
+        });
     }
 
 }

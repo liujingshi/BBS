@@ -36,7 +36,7 @@ var popup = {
         if (index == "") {
             layer.closeAll()
         } else {
-            layer.close(index);
+            layer.close(index)
         }
     },
 
@@ -47,7 +47,7 @@ var popup = {
             skin: 'layui-layer-rim',
             area: [width + 'px', height + 'px'],
             content: $('#' + id)
-        });
+        })
     }
 
 }

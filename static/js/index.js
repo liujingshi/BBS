@@ -6,3 +6,5 @@ $('.slider').bxSlider({
     adaptiveHeight: true,
     slideMargin: 10
 });
+
+popup.alert('a','laugh')

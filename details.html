@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>论坛管理系统</title>
     <link rel="stylesheet" href="./static/common/main.css">
-    <link rel="stylesheet" href="./static/common/jquery.bxslider.css">
     <link rel="stylesheet" href="./static/css/details.css">
 </head>
 
@@ -29,30 +28,22 @@
             <button class="btn btn-green" id="user-reg">注册</button>
         </div>
     </nav>
-    <main>
+    <main id="vue-element">
         <div class="row post">
             <div class="col2">
                 <img src="./static/images/1.png" class="head">
             </div>
-            <div class="col2 post-user">版主</div>
-            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-            <div class="col2 post-time">2018-12-17</div>
+            <div class="col2 post-user">{{post.user_id}}</div>
+            <div class="col6 content">{{post.name}}</div>
+            <div class="col2 post-time">{{post.date}}</div>
         </div>
-        <div class="row post">
+        <div class="row post" v-for="r in re">
             <div class="col2">
                 <img src="./static/images/2.png" class="head">
             </div>
-            <div class="col2 post-user">版主</div>
-            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-            <div class="col2 post-time">2018-12-17</div>
-        </div>
-        <div class="row post">
-            <div class="col2">
-                <img src="./static/images/3.png" class="head">
-            </div>
-            <div class="col2 post-user">版主</div>
-            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-            <div class="col2 post-time">2018-12-17</div>
+            <div class="col2 post-user">{{r.user_id}}</div>
+            <div class="col6 content">{{r.content}}</div>
+            <div class="col2 post-time">{{r.date}}</div>
         </div>
         <div class="row post">
             <div class="col12">
@@ -146,7 +137,7 @@
 <script src="./static/common/function.js"></script>
 <script src="./static/common/layer/layer.js"></script>
 <script src="./static/common/popup.js"></script>
-<script src="./static/common/jquery.bxslider.js"></script>
 <script src="./static/common/main.js"></script>
+<script src="./static/js/details.js"></script>
 
 </html>

@@ -99,8 +99,8 @@ var re = [
         content: "专业水贴"
     },
     {
-        id: 10002,
-        up_id: 10002,
+        id: 10003,
+        up_id: 10003,
         user_id: 10001,
         date: "2018-12-17",
         content: "成功占领一楼"

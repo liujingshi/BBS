@@ -66,7 +66,7 @@
                 </div>
                 <div v-for="b in board" class="card">
                     <p>{{b.name}}</p>
-                    <div v-for="p in b.post" class="row post" onclick="goto_page('details', 10001)">
+                    <div v-for="p in b.post" class="row post" :onclick="'goto_page(\'details\', '+b.id+')'">
                         <div class="col2">
                             <img src="./static/images/1.png" class="head">
                         </div>

@@ -58,3 +58,13 @@ var findById = function (key, id) {
     }
     return -1;
 }
+
+var findByAny = function (key, k, v) {
+    var result = []
+    for (var i in data[key]) {
+        if (data[key][i][k] == v) {
+            result.push(i)
+        }
+    }
+    return result
+}

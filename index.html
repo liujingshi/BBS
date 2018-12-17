@@ -12,15 +12,16 @@
 </head>
 
 <body>
+    <div id="back"></div>
     <nav>
         <div class="logo"><i>logo</i></div>
-        <a href="#">主页</a>
-        <a href="#">分类</a>
-        <a href="#">帖子</a>
-        <form class="search">
-            <input type="text" placeholder="请输入您要搜索的内容">
+        <a href="index.html">主页</a>
+        <a href="javascript:report()">发布帖子</a>
+        <form action="search.html" class="search">
+            <input type="text" name="search" placeholder="请输入您要搜索的内容">
             <input type="submit" class="btn btn-orange" value="搜索">
         </form>
+        <a href="admin.html">后台</a>
         <div class="right">
             <button class="btn btn-green" id="user-login">登录</button>
         </div>
@@ -102,10 +103,37 @@
             </div>
             <div class="col9">
                 <div class="card">
-                    <p>最新帖子</p>
+                    <p>公告板</p>
+                    <h6 class="notice" onclick="goto_page('notice')">公告1</h6>
+                    <h6 class="notice" onclick="goto_page('notice')">公告2</h6>
+                    <h6 class="notice" onclick="goto_page('notice')">公告3</h6>
                 </div>
                 <div class="card">
                     <p>全部帖子</p>
+                    <div class="row post" onclick="goto_page('details')">
+                        <div class="col2">
+                            <img src="./static/images/1.png" class="head">
+                        </div>
+                        <div class="col2 post-user">版主</div>
+                        <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
+                        <div class="col2 post-time">2018-12-17</div>
+                    </div>
+                    <div class="row post" onclick="goto_page('details')">
+                        <div class="col2">
+                            <img src="./static/images/1.png" class="head">
+                        </div>
+                        <div class="col2 post-user">版主</div>
+                        <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
+                        <div class="col2 post-time">2018-12-17</div>
+                    </div>
+                    <div class="row post" onclick="goto_page('details')">
+                        <div class="col2">
+                            <img src="./static/images/1.png" class="head">
+                        </div>
+                        <div class="col2 post-user">版主</div>
+                        <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
+                        <div class="col2 post-time">2018-12-17</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,6 +195,21 @@
             <div class="col6 login">
                 <span class="black">已有账号?</span>
                 <a href="javascript:now_login();" class="blue">立即登录</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="popup-html" id="popup-report">
+    <form id="report">
+        <div class="row">
+            <div class="col12 recont">
+                <textarea name="cont" required autocomplete="off" placeholder="请输入要发布帖子的内容"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col12">
+                <input type="submit" value="立即发布" class="btn btn-green">
             </div>
         </div>
     </form>

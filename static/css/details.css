@@ -1,24 +1,16 @@
-
-.notice {
-    cursor: pointer;
-    font-size: 14px;
-    color: gray;
-    border-bottom: 1px solid gray;
-    margin-top: 3px;
-    margin-bottom: 8px;
-}
-
 .post {
-    border: 1px double gray;
-    border-radius: 5px;
-    cursor: pointer;
+    background: rgba(255,255,255,.8);
     margin-top: 5px;
+    border-radius: 5px;
 }
 
 .post > div {
     box-sizing: border-box;
-    border-right: 2px solid gray;
-    
+    border-right: 2px solid gray; 
+}
+
+.post > div:last-child {
+    border: 0;
 }
 
 .head {
@@ -37,7 +29,12 @@
     align-items: center;
 }
 
-.recont textarea {
+#repost textarea {
     width: calc(100% - 10px);
     height: 200px;
+    background: rgba(255,255,255,.8);
+}
+
+#repost textarea:focus {
+    background: #fff;
 }

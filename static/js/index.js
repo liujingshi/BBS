@@ -7,4 +7,3 @@ $('.slider').bxSlider({
     slideMargin: 10
 });
 
-popup.alert('a','laugh')

@@ -7,3 +7,8 @@
         return false
     };
 })(jQuery)
+
+
+var goto_page = function (page) {
+    document.location.href = page + ".html"
+}

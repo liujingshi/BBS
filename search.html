@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>论坛管理系统</title>
+    <link rel="stylesheet" href="./static/common/main.css">
+    <link rel="stylesheet" href="./static/common/jquery.bxslider.css">
+    <link rel="stylesheet" href="./static/css/details.css">
+</head>
+
+<body>
+    <div id="back"></div>
+    <nav>
+        <div class="logo"><i>logo</i></div>
+        <a href="index.html">主页</a>
+        <a href="javascript:report()">发布帖子</a>
+        <form action="search.html" class="search">
+            <input type="text" name="search" placeholder="请输入您要搜索的内容">
+            <input type="submit" class="btn btn-orange" value="搜索">
+        </form>
+        <a href="admin.html">后台</a>
+        <div class="right">
+            <button class="btn btn-green" id="user-login">登录</button>
+        </div>
+        <div class="nbtn">
+            <button class="btn btn-green" id="user-reg">注册</button>
+        </div>
+    </nav>
+    <main>
+        <div class="row post">
+            <div class="col2">
+                <img src="./static/images/1.png" class="head">
+            </div>
+            <div class="col2 post-user">版主</div>
+            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
+            <div class="col2 post-time">2018-12-17</div>
+        </div>
+        <div class="row post">
+            <div class="col2">
+                <img src="./static/images/2.png" class="head">
+            </div>
+            <div class="col2 post-user">版主</div>
+            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
+            <div class="col2 post-time">2018-12-17</div>
+        </div>
+        <div class="row post">
+            <div class="col2">
+                <img src="./static/images/3.png" class="head">
+            </div>
+            <div class="col2 post-user">版主</div>
+            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
+            <div class="col2 post-time">2018-12-17</div>
+        </div>
+        <div class="row post">
+            <div class="col2">
+                <img src="./static/images/4.png" class="head">
+            </div>
+            <div class="col2 post-user">版主</div>
+            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
+            <div class="col2 post-time">2018-12-17</div>
+        </div>
+    </main>
+</body>
+
+<div class="popup-html" id="popup-login">
+    <form id="login">
+        <div class="row">
+            <div class="col2 label">用户名</div>
+            <div class="col8">
+                <input type="text" name="username" placeholder="请输入用户名" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2 label">密码</div>
+            <div class="col8">
+                <input type="password" name="password" placeholder="请输入密码" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2"></div>
+            <div class="col4">
+                <input type="submit" value="立即登录" class="btn btn-blue">
+            </div>
+            <div class="col6 reg">
+                <span class="black">没有账号?</span>
+                <a href="javascript:now_reg();" class="blue">立即注册</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="popup-html" id="popup-reg">
+    <form id="reg">
+        <div class="row">
+            <div class="col2 label">用户名</div>
+            <div class="col8">
+                <input type="text" name="username" placeholder="请输入用户名" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2 label">密码</div>
+            <div class="col8">
+                <input type="password" name="password1" placeholder="请输入密码" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2 label">确认密码</div>
+            <div class="col8">
+                <input type="password" name="password2" placeholder="请再次输入密码" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2"></div>
+            <div class="col4">
+                <input type="submit" value="立即注册" class="btn btn-green">
+            </div>
+            <div class="col6 login">
+                <span class="black">已有账号?</span>
+                <a href="javascript:now_login();" class="blue">立即登录</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="popup-html" id="popup-report">
+    <form id="report">
+        <div class="row">
+            <div class="col12 recont">
+                <textarea name="cont" required autocomplete="off" placeholder="请输入要发布帖子的内容"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col12">
+                <input type="submit" value="立即发布" class="btn btn-green">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="./static/common/jquery.js"></script>
+<script src="./static/common/function.js"></script>
+<script src="./static/common/layer/layer.js"></script>
+<script src="./static/common/popup.js"></script>
+<script src="./static/common/jquery.bxslider.js"></script>
+<script src="./static/common/main.js"></script>
+
+</html>

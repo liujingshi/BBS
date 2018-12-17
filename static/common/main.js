@@ -7,10 +7,6 @@ $(window).bind("scroll", function() {
     }
 })
 
-$(".search").submit(function () {
-    popup.msg("搜索")
-    return false
-})
 
 $("#user-login").bind("click", function () {
     popup.html("popup-login", 500, 350, "用户登录")
@@ -29,3 +25,8 @@ var now_login = function() {
     popup.close()
     $("#user-login").click()
 }
+
+var report=function(){
+    popup.html("popup-report", 600, 450, "发布帖子")
+} 
+

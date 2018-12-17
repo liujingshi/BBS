@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>论坛管理系统</title>
+    <link rel="stylesheet" href="./static/common/main.css">
+    <link rel="stylesheet" href="./static/common/jquery.bxslider.css">
+    <link rel="stylesheet" href="./static/css/notice.css">
+</head>
+
+<body>
+    <div id="back"></div>
+    <nav>
+        <div class="logo"><i>logo</i></div>
+        <a href="index.html">主页</a>
+        <a href="javascript:report()">发布帖子</a>
+        <form action="search.html" class="search">
+            <input type="text" name="search" placeholder="请输入您要搜索的内容">
+            <input type="submit" class="btn btn-orange" value="搜索">
+        </form>
+        <a href="admin.html">后台</a>
+        <div class="right">
+            <button class="btn btn-green" id="user-login">登录</button>
+        </div>
+        <div class="nbtn">
+            <button class="btn btn-green" id="user-reg">注册</button>
+        </div>
+    </nav>
+    <main>
+        <div class="row">
+            <div class="col12">
+                <div class="card">
+                    <h1>关于2019年元旦放假安排的通知</h1>
+                    <h4>2018.12.17</h4>
+                    <hr>
+                    <h5>全校各单位:</h5>
+                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据《国务院办公厅关于2019年部分节假8安排的通知》精神，结合我校实际，现将元旦放假安排通知如下:</h5>
+                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;元旦假期共3天。2018年12月30日(周日)至2019年1月1日(周二)，2019年1月2日
+                        (周三)正式上班、上课。2018年12月31日(周一)的课程调至12月29日(周六)。
+                    </h5>
+                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教务处和各办学机构要妥善安排好假期前后的教学工作，保证教学秩序。公安处要加强放假期间校园巡查，特别是重点部位的检查，保障校园安全。学生处、后勤集团、各学院要做好假期在校学生的管理和服务保障。各单位要加强对师生员工的安全教育，开展安全隐患排查，如遇突发事件，迅速启动应急预案，妥善处理并按规定第一时间上报，确保节日安全。
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<div class="popup-html" id="popup-login">
+    <form id="login">
+        <div class="row">
+            <div class="col2 label">用户名</div>
+            <div class="col8">
+                <input type="text" name="username" placeholder="请输入用户名" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2 label">密码</div>
+            <div class="col8">
+                <input type="password" name="password" placeholder="请输入密码" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2"></div>
+            <div class="col4">
+                <input type="submit" value="立即登录" class="btn btn-blue">
+            </div>
+            <div class="col6 reg">
+                <span class="black">没有账号?</span>
+                <a href="javascript:now_reg();" class="blue">立即注册</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="popup-html" id="popup-reg">
+    <form id="reg">
+        <div class="row">
+            <div class="col2 label">用户名</div>
+            <div class="col8">
+                <input type="text" name="username" placeholder="请输入用户名" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2 label">密码</div>
+            <div class="col8">
+                <input type="password" name="password1" placeholder="请输入密码" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2 label">确认密码</div>
+            <div class="col8">
+                <input type="password" name="password2" placeholder="请再次输入密码" required autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2"></div>
+            <div class="col4">
+                <input type="submit" value="立即注册" class="btn btn-green">
+            </div>
+            <div class="col6 login">
+                <span class="black">已有账号?</span>
+                <a href="javascript:now_login();" class="blue">立即登录</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="popup-html" id="popup-report">
+    <form id="report">
+        <div class="row">
+            <div class="col12 recont">
+                <textarea name="cont" required autocomplete="off" placeholder="请输入要发布帖子的内容"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col12">
+                <input type="submit" value="立即发布" class="btn btn-green">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="./static/common/jquery.js"></script>
+<script src="./static/common/function.js"></script>
+<script src="./static/common/layer/layer.js"></script>
+<script src="./static/common/popup.js"></script>
+<script src="./static/common/jquery.bxslider.js"></script>
+<script src="./static/common/main.js"></script>
+
+</html>

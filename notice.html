@@ -32,17 +32,11 @@
     <main>
         <div class="row">
             <div class="col12">
-                <div class="card">
-                    <h1>关于2019年元旦放假安排的通知</h1>
-                    <h4>2018.12.17</h4>
+                <div class="card" id="vue-element">
+                    <h1>{{notice.title}}</h1>
+                    <h4>{{notice.date}}</h4>
                     <hr>
-                    <h5>全校各单位:</h5>
-                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据《国务院办公厅关于2019年部分节假8安排的通知》精神，结合我校实际，现将元旦放假安排通知如下:</h5>
-                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;元旦假期共3天。2018年12月30日(周日)至2019年1月1日(周二)，2019年1月2日
-                        (周三)正式上班、上课。2018年12月31日(周一)的课程调至12月29日(周六)。
-                    </h5>
-                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教务处和各办学机构要妥善安排好假期前后的教学工作，保证教学秩序。公安处要加强放假期间校园巡查，特别是重点部位的检查，保障校园安全。学生处、后勤集团、各学院要做好假期在校学生的管理和服务保障。各单位要加强对师生员工的安全教育，开展安全隐患排查，如遇突发事件，迅速启动应急预案，妥善处理并按规定第一时间上报，确保节日安全。
-                    </h5>
+                    <h5>{{notice.content}}</h5>
                 </div>
             </div>
         </div>
@@ -124,11 +118,14 @@
     </form>
 </div>
 
+<script src="./static/common/data.js"></script>
 <script src="./static/common/jquery.js"></script>
+<script src="./static/common/vue.js"></script>
 <script src="./static/common/function.js"></script>
 <script src="./static/common/layer/layer.js"></script>
 <script src="./static/common/popup.js"></script>
 <script src="./static/common/jquery.bxslider.js"></script>
 <script src="./static/common/main.js"></script>
+<script src="./static/js/notice.js"></script>
 
 </html>

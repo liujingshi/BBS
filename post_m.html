@@ -29,44 +29,34 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>所属板块</th>
                     <th>帖子名称</th>
                     <th>发布日期</th>
                     <th>发布人</th>
                     <th>回复数</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>10001</td>
-                    <td>第一个帖子</td>
-                    <td>2018-12-17</td>
-                    <td>张三</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>10002</td>
-                    <td>第二个帖子</td>
-                    <td>2018-12-17</td>
-                    <td>李四</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>10003</td>
-                    <td>第三个帖子</td>
-                    <td>2018-12-17</td>
-                    <td>王五</td>
-                    <td>12</td>
+            <tbody id="vue-element">
+                <tr v-for="p in post">
+                    <td>{{p.id}}</td>
+                    <td>{{p.up_id}}</td>
+                    <td>{{p.name}}</td>
+                    <td>{{p.date}}</td>
+                    <td>{{p.user_id}}</td>
+                    <td>20</td>
                 </tr>
             </tbody>
         </table>
     </main>
 </body>
 
+<script src="./static/common/data.js"></script>
 <script src="./static/common/jquery.js"></script>
+<script src="./static/common/vue.js"></script>
 <script src="./static/common/function.js"></script>
 <script src="./static/common/layer/layer.js"></script>
 <script src="./static/common/popup.js"></script>
 <script src="./static/common/main.js"></script>
-<script src="./static/js/admin.js"></script>
+<script src="./static/js/post_m.js"></script>
 
 </html>

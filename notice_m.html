@@ -30,39 +30,31 @@
                 <tr>
                     <th>ID</th>
                     <th>公告标题</th>
+                    <th>公告内容</th>
                     <th>发布日期</th>
                     <th>查看人数</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>10001</td>
-                    <td>第一个公告</td>
-                    <td>2018-12-17</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>10002</td>
-                    <td>第二个公告</td>
-                    <td>2018-12-17</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>10003</td>
-                    <td>第三个公告</td>
-                    <td>2018-12-17</td>
-                    <td>20</td>
+            <tbody id="vue-element">
+                <tr v-for="n in notice">
+                    <td>{{n.id}}</td>
+                    <td>{{n.title}}</td>
+                    <td>{{n.content}}</td>
+                    <td>{{n.date}}</td>
+                    <td>{{n.number}}</td>
                 </tr>
             </tbody>
         </table>
     </main>
 </body>
 
+<script src="./static/common/data.js"></script>
 <script src="./static/common/jquery.js"></script>
+<script src="./static/common/vue.js"></script>
 <script src="./static/common/function.js"></script>
 <script src="./static/common/layer/layer.js"></script>
 <script src="./static/common/popup.js"></script>
 <script src="./static/common/main.js"></script>
-<script src="./static/js/admin.js"></script>
+<script src="./static/js/notice_m.js"></script>
 
 </html>

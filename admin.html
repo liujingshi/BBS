@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>论坛后台管理系统 - 用户管理</title>
     <link rel="stylesheet" href="./static/common/main.css">
-    <link rel="stylesheet" href="./static/css/admin.css">
 </head>
 
 <body>
@@ -35,25 +34,11 @@
                     <th>回复帖子数</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>10001</td>
-                    <td>张三</td>
-                    <td>2018-12-17</td>
-                    <td>20</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>10002</td>
-                    <td>李四</td>
-                    <td>2018-12-17</td>
-                    <td>20</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>10003</td>
-                    <td>王五</td>
-                    <td>2018-12-17</td>
+            <tbody id="vue-element">
+                <tr v-for="u in user">
+                    <td>{{u.id}}</td>
+                    <td>{{u.username}}</td>
+                    <td>{{u.date}}</td>
                     <td>20</td>
                     <td>12</td>
                 </tr>
@@ -62,7 +47,9 @@
     </main>
 </body>
 
+<script src="./static/common/data.js"></script>
 <script src="./static/common/jquery.js"></script>
+<script src="./static/common/vue.js"></script>
 <script src="./static/common/function.js"></script>
 <script src="./static/common/layer/layer.js"></script>
 <script src="./static/common/popup.js"></script>

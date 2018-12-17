@@ -33,33 +33,9 @@
         <div class="row">
             <div class="col8">
                 <div class="card">
-                    <div class="slider">
-                        <div class="slide">
-                            <img src="./static/images/1.png" title="名菜">
-                        </div>
-                        <div class="slide">
-                            <img src="./static/images/2.png" title="名菜">
-                        </div>
-                        <div class="slide">
-                            <img src="./static/images/3.png" title="名菜">
-                        </div>
-                        <div class="slide">
-                            <img src="./static/images/4.png" title="名菜">
-                        </div>
-                        <div class="slide">
-                            <img src="./static/images/5.png" title="名菜">
-                        </div>
-                        <div class="slide">
-                            <img src="./static/images/6.png" title="名菜">
-                        </div>
-                        <div class="slide">
-                            <img src="./static/images/7.png" title="名菜">
-                        </div>
-                        <div class="slide">
-                            <img src="./static/images/8.png" title="名菜">
-                        </div>
-                        <div class="slide">
-                            <img src="./static/images/9.png" title="名菜">
+                    <div class="slider" id="vue-slider">
+                        <div class="slide" v-for="s in slider">
+                            <img :src="s.src" :title="s.title">
                         </div>
                     </div>
                 </div>
@@ -74,26 +50,8 @@
             <div class="col3">
                 <div class="card">
                     <p>论坛分类</p>
-                    <div class="kind">
-                        <a href="#">娱乐明星</a>
-                        <a href="#">爱综艺</a>
-                        <a href="#">追剧狂</a>
-                        <a href="#">看电影</a>
-                        <a href="#">体育</a>
-                        <a href="#">小说</a>
-                        <a href="#">生活家</a>
-                        <a href="#">闲·趣</a>
-                        <a href="#">高校</a>
-                        <a href="#">地区</a>
-                        <a href="#">人文自然</a>
-                        <a href="#">萌宠</a>
-                        <a href="#">游戏</a>
-                        <a href="#">音乐</a>
-                        <a href="#">追星族</a>
-                        <a href="#">教育</a>
-                        <a href="#">金融</a>
-                        <a href="#">企业</a>
-                        <a href="#">历史</a>
+                    <div class="kind" id="vue-kind">
+                        <a href="#" v-for="k in kind">{{k}}</a>
                     </div>
                 </div>
                 <div class="card">
@@ -101,38 +59,20 @@
 
                 </div>
             </div>
-            <div class="col9">
+            <div class="col9" id="vue-notice-board">
                 <div class="card">
                     <p>公告板</p>
-                    <h6 class="notice" onclick="goto_page('notice')">公告1</h6>
-                    <h6 class="notice" onclick="goto_page('notice')">公告2</h6>
-                    <h6 class="notice" onclick="goto_page('notice')">公告3</h6>
+                    <h6 v-for="n in notice" class="notice" :onclick="'goto_page(\'notice\','+n.id+')'">{{n.title}}</h6>
                 </div>
-                <div class="card">
-                    <p>全部帖子</p>
-                    <div class="row post" onclick="goto_page('details')">
+                <div v-for="b in board" class="card">
+                    <p>{{b.name}}</p>
+                    <div v-for="p in b.post" class="row post" onclick="goto_page('details', 10001)">
                         <div class="col2">
                             <img src="./static/images/1.png" class="head">
                         </div>
-                        <div class="col2 post-user">版主</div>
-                        <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-                        <div class="col2 post-time">2018-12-17</div>
-                    </div>
-                    <div class="row post" onclick="goto_page('details')">
-                        <div class="col2">
-                            <img src="./static/images/1.png" class="head">
-                        </div>
-                        <div class="col2 post-user">版主</div>
-                        <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-                        <div class="col2 post-time">2018-12-17</div>
-                    </div>
-                    <div class="row post" onclick="goto_page('details')">
-                        <div class="col2">
-                            <img src="./static/images/1.png" class="head">
-                        </div>
-                        <div class="col2 post-user">版主</div>
-                        <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-                        <div class="col2 post-time">2018-12-17</div>
+                        <div class="col2 post-user">{{p.user_id}}</div>
+                        <div class="col6 content">{{p.name}}</div>
+                        <div class="col2 post-time">{{p.date}}</div>
                     </div>
                 </div>
             </div>
@@ -215,7 +155,9 @@
     </form>
 </div>
 
+<script src="./static/common/data.js"></script>
 <script src="./static/common/jquery.js"></script>
+<script src="./static/common/vue.js"></script>
 <script src="./static/common/function.js"></script>
 <script src="./static/common/layer/layer.js"></script>
 <script src="./static/common/popup.js"></script>

@@ -29,44 +29,32 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>回复人用户名</th>
-                    <th>回复时间</th>
+                    <th>所属帖子</th>
                     <th>回复内容</th>
-                    <th>帖子ID</th>
+                    <th>回复人</th>
+                    <th>回复时间</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>10001</td>
-                    <td>张三</td>
-                    <td>2018-12-17</td>
-                    <td>20</td>
-                    <td>10001</td>
-                </tr>
-                <tr>
-                    <td>10002</td>
-                    <td>李四</td>
-                    <td>2018-12-17</td>
-                    <td>20</td>
-                    <td>10002</td>
-                </tr>
-                <tr>
-                    <td>10003</td>
-                    <td>王五</td>
-                    <td>2018-12-17</td>
-                    <td>20</td>
-                    <td>10003</td>
+            <tbody id="vue-element">
+                <tr v-for="r in re">
+                    <td>{{r.id}}</td>
+                    <td>{{r.up_id}}</td>
+                    <td>{{r.content}}</td>
+                    <td>{{r.user_id}}</td>
+                    <td>{{r.date}}</td>
                 </tr>
             </tbody>
         </table>
     </main>
 </body>
 
+<script src="./static/common/data.js"></script>
 <script src="./static/common/jquery.js"></script>
+<script src="./static/common/vue.js"></script>
 <script src="./static/common/function.js"></script>
 <script src="./static/common/layer/layer.js"></script>
 <script src="./static/common/popup.js"></script>
 <script src="./static/common/main.js"></script>
-<script src="./static/js/admin.js"></script>
+<script src="./static/js/re_m.js"></script>
 
 </html>

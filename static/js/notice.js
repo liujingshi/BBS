@@ -16,5 +16,3 @@ if (id != null) {
 } else {
     goto_page("error", "404")
 }
-
-

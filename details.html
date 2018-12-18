@@ -37,24 +37,24 @@
     <main id="vue-element">
         <div class="row post">
             <div class="col2">
-                <img src="./static/images/1.png" class="head">
+                <img :src="post.user.img" class="head">
             </div>
-            <div class="col2 post-user">{{post.user_id}}</div>
+            <div class="col2 post-user">{{post.user.username}}</div>
             <div class="col6 content">{{post.name}}</div>
             <div class="col2 post-time">{{post.date}}</div>
         </div>
         <div class="row post" v-for="r in re">
             <div class="col2">
-                <img src="./static/images/2.png" class="head">
+                <img :src="r.user.img" class="head">
             </div>
-            <div class="col2 post-user">{{r.user_id}}</div>
+            <div class="col2 post-user">{{r.user.username}}</div>
             <div class="col6 content">{{r.content}}</div>
             <div class="col2 post-time">{{r.date}}</div>
         </div>
         <div class="row post">
             <div class="col12">
-                <form id="repost">
-                    <textarea name="recont" placeholder="请输入回复内容"></textarea>
+                <form id="repost" onsubmit="return false;">
+                    <textarea id="recont" placeholder="请输入回复内容"></textarea>
                     <input type="submit" value="提交回复" class="btn btn-green">
                 </form>
             </div>
@@ -125,8 +125,16 @@
 <div class="popup-html" id="popup-report">
     <form id="report">
         <div class="row">
+            <div class="col2 label">所属板块</div>
+            <div class="col8">
+                <select name="up_id" id="vue-board-select">
+                    <option v-for="b in board" :value="b.id">{{b.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
             <div class="col12 recont">
-                <textarea name="cont" required autocomplete="off" placeholder="请输入要发布帖子的内容"></textarea>
+                <textarea id="recont-report" required autocomplete="off" placeholder="请输入要发布帖子的内容"></textarea>
             </div>
         </div>
         <div class="row">

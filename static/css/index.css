@@ -37,7 +37,4 @@
     align-items: center;
 }
 
-.recont textarea {
-    width: calc(100% - 10px);
-    height: 200px;
-}
+

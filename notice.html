@@ -111,8 +111,16 @@
 <div class="popup-html" id="popup-report">
     <form id="report">
         <div class="row">
+            <div class="col2 label">所属板块</div>
+            <div class="col8">
+                <select name="up_id" id="vue-board-select">
+                    <option v-for="b in board" :value="b.id">{{b.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
             <div class="col12 recont">
-                <textarea name="cont" required autocomplete="off" placeholder="请输入要发布帖子的内容"></textarea>
+                <textarea id="recont-report" required autocomplete="off" placeholder="请输入要发布帖子的内容"></textarea>
             </div>
         </div>
         <div class="row">

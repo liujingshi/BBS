@@ -69,6 +69,16 @@ var findByAny = function (key, k, v) {
     return result
 }
 
+var searchPost = function (search) {
+    var result = []
+    for (var i in data.post) {
+        if (data.post[i].name != undefined && data.post[i].name.indexOf(search) >= 0) {
+            result.push(i)
+        }
+    }
+    return result
+}
+
 var setStorage = function () {
     for (var key in data) {
         storage(key, data[key])
@@ -103,6 +113,7 @@ var userLogin = function (username, password) {
             return false
         }
     }
+    popup.close()
     popup.msg("登录成功", "laugh")
     data.user_login_state = "1"
     data.user_info = data.user[user_i[0]]
@@ -124,6 +135,7 @@ var userReg = function (username, password) {
         data.user_login_state = "1"
         data.user_info = new_user
         setStorage()
+        popup.close()
         popup.msg("注册成功", "laugh")
         return true
     } else {
@@ -138,4 +150,37 @@ var userIsLogin = function () {
     } else {
         return false
     }
+}
+
+var userExit = function () {
+    data.user_login_state = "0"
+    setStorage()
+}
+
+var repost = function (id, cont) {
+    var new_re = {
+        id: getNewId("re"),
+        up_id: parseInt(id),
+        user_id: data.user_info.id,
+        user: data.user_info,
+        date: getNowDate(),
+        content: cont
+    }
+    data.re.push(new_re)
+    setStorage()
+}
+
+var report_add = function (id, cont) {
+    var new_id = getNewId("post")
+    var new_post = {
+        id: new_id,
+        up_id: parseInt(id),
+        user_id: data.user_info.id,
+        user: data.user_info,
+        date: getNowDate(),
+        name: cont
+    }
+    data.post.push(new_post)
+    setStorage()
+    return new_id
 }

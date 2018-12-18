@@ -2,21 +2,21 @@
 var user = [
     {
         id: 10001,
-        username: "小明",
-        img: "./static/images/user-head.png",
-        date: "2018-12-17",
-        password: "202cb962ac59075b964b07152d234b70"
-    },
-    {
-        id: 10002,
         username: "小红",
         img: "./static/images/user-head.png",
         date: "2018-12-17",
         password: "202cb962ac59075b964b07152d234b70"
     },
     {
+        id: 10002,
+        username: "小白",
+        img: "./static/images/user-head.png",
+        date: "2018-12-17",
+        password: "202cb962ac59075b964b07152d234b70"
+    },
+    {
         id: 10003,
-        username: "小李",
+        username: "小蓝",
         img: "./static/images/user-head.png",
         date: "2018-12-17",
         password: "202cb962ac59075b964b07152d234b70"
@@ -26,15 +26,15 @@ var user = [
 var board = [
     {
         id: 10001,
-        name: "模块一"
+        name: "游戏"
     },
     {
         id: 10002,
-        name: "模块二"
+        name: "娱乐"
     },
     {
         id: 10003,
-        name: "模块三"
+        name: "体育"
     }
 ]
 
@@ -66,21 +66,21 @@ var post = [
     {
         id: 10001,
         up_id: 10001,
-        name: "第一个帖子",
+        name: "Steam上新游戏",
         date: "2018-12-17",
         user_id: 10001
     },
     {
         id: 10002,
         up_id: 10002,
-        name: "第二个帖子",
+        name: "北京电视台春晚代言人",
         date: "2018-12-17",
         user_id: 10002
     },
     {
         id: 10003,
         up_id: 10003,
-        name: "第三个帖子",
+        name: "皇马 阿贾克斯",
         date: "2018-12-17",
         user_id: 10003
     }
@@ -92,20 +92,20 @@ var re = [
         up_id: 10001,
         user_id: 10002,
         date: "2018-12-17",
-        content: "我来占个楼"
+        content: "GTA5?????"
     },
     {
         id: 10002,
         up_id: 10002,
         user_id: 10003,
         date: "2018-12-17",
-        content: "专业水贴"
+        content: "是谁?????"
     },
     {
         id: 10003,
         up_id: 10003,
         user_id: 10001,
         date: "2018-12-17",
-        content: "成功占领一楼"
+        content: "Ajax?????"
     }
 ]

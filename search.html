@@ -8,6 +8,11 @@
     <title>论坛管理系统</title>
     <link rel="stylesheet" href="./static/common/main.css">
     <link rel="stylesheet" href="./static/css/details.css">
+    <style>
+        .post {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,38 +39,14 @@
             <button class="btn btn-orange" id="user-exit">退出</button>
         </div>
     </nav>
-    <main>
-        <div class="row post">
+    <main id="vue-element">
+        <div class="row post" v-for="p in post" :onclick="'goto_page(\'details\', '+p.id+')'">
             <div class="col2">
-                <img src="./static/images/1.png" class="head">
+                <img :src="p.user.img" class="head">
             </div>
-            <div class="col2 post-user">版主</div>
-            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-            <div class="col2 post-time">2018-12-17</div>
-        </div>
-        <div class="row post">
-            <div class="col2">
-                <img src="./static/images/2.png" class="head">
-            </div>
-            <div class="col2 post-user">版主</div>
-            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-            <div class="col2 post-time">2018-12-17</div>
-        </div>
-        <div class="row post">
-            <div class="col2">
-                <img src="./static/images/3.png" class="head">
-            </div>
-            <div class="col2 post-user">版主</div>
-            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-            <div class="col2 post-time">2018-12-17</div>
-        </div>
-        <div class="row post">
-            <div class="col2">
-                <img src="./static/images/4.png" class="head">
-            </div>
-            <div class="col2 post-user">版主</div>
-            <div class="col6 content">这是一个帖子这是一个帖子这是一个帖子这是一个帖子这是一个帖子</div>
-            <div class="col2 post-time">2018-12-17</div>
+            <div class="col2 post-user">{{p.user.username}}</div>
+            <div class="col6 content">{{p.name}}</div>
+            <div class="col2 post-time">{{p.date}}</div>
         </div>
     </main>
 </body>
@@ -133,8 +114,16 @@
 <div class="popup-html" id="popup-report">
     <form id="report">
         <div class="row">
+            <div class="col2 label">所属板块</div>
+            <div class="col8">
+                <select name="up_id" id="vue-board-select">
+                    <option v-for="b in board" :value="b.id">{{b.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
             <div class="col12 recont">
-                <textarea name="cont" required autocomplete="off" placeholder="请输入要发布帖子的内容"></textarea>
+                <textarea id="recont-report" required autocomplete="off" placeholder="请输入要发布帖子的内容"></textarea>
             </div>
         </div>
         <div class="row">
@@ -153,5 +142,6 @@
 <script src="./static/common/layer/layer.js"></script>
 <script src="./static/common/popup.js"></script>
 <script src="./static/common/main.js"></script>
+<script src="./static/js/search.js"></script>
 
 </html>

@@ -68,3 +68,74 @@ var findByAny = function (key, k, v) {
     }
     return result
 }
+
+var setStorage = function () {
+    for (var key in data) {
+        storage(key, data[key])
+    }
+}
+
+var getNowDate = function () {
+    var now = new Date()
+    return now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()
+}
+
+var rand = function (start, end) {
+    return Math.floor(Math.random() * end) + start
+}
+
+var getNewId = function (key) {
+    var new_id = rand(10001, 19999)
+    if (findById(key, new_id) < 0) {
+        return new_id
+    }
+    return getNewId(key)
+}
+
+var userLogin = function (username, password) {
+    var user_i = findByAny("user", "username", username)
+    if (user_i.length == 0) {
+        popup.msg("该用户名不存在 请先注册", "cry")
+        return false
+    } else {
+        if (data.user[user_i[0]].password != $.md5(password)) {
+            popup.msg("密码错误", "no")
+            return false
+        }
+    }
+    popup.msg("登录成功", "laugh")
+    data.user_login_state = "1"
+    data.user_info = data.user[user_i[0]]
+    setStorage()
+    return true
+}
+
+var userReg = function (username, password) {
+    var user_i = findByAny("user", "username", username)
+    if (user_i.length == 0) {
+        var new_user = {
+            id: getNewId(),
+            username: username,
+            img: "./static/images/user-head.png",
+            date: getNowDate(),
+            password: $.md5(password)
+        }
+        data.user.push(new_user)
+        data.user_login_state = "1"
+        data.user_info = new_user
+        setStorage()
+        popup.msg("注册成功", "laugh")
+        return true
+    } else {
+        popup.msg("该用户名已存在", "no")
+        return false
+    }
+}
+
+var userIsLogin = function () {
+    if (data.user_login_state == "1") {
+        return true
+    } else {
+        return false
+    }
+}

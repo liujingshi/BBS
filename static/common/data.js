@@ -3,20 +3,23 @@ var user = [
     {
         id: 10001,
         username: "小明",
-        img: "./static/images/1.png",
-        date: "2018-12-17"
+        img: "./static/images/user-head.png",
+        date: "2018-12-17",
+        password: "202cb962ac59075b964b07152d234b70"
     },
     {
         id: 10002,
         username: "小红",
-        img: "./static/images/2.png",
-        date: "2018-12-17"
+        img: "./static/images/user-head.png",
+        date: "2018-12-17",
+        password: "202cb962ac59075b964b07152d234b70"
     },
     {
         id: 10003,
         username: "小李",
-        img: "./static/images/3.png",
-        date: "2018-12-17"
+        img: "./static/images/user-head.png",
+        date: "2018-12-17",
+        password: "202cb962ac59075b964b07152d234b70"
     }
 ]
 

@@ -24,11 +24,11 @@ var popup = {
         return layer.msg(msg, { icon: this.icon.load, shade: 0.3, time: time })
     },
 
-    alert: function (msg, icon = "none") {
+    alert: function (msg, title = "提示", icon = "none", done = function (index) { layer.close(index) }) {
         if (icon == "none") {
-            return layer.alert(msg)
+            return layer.alert(msg, { title: title}, done)
         } else {
-            return layer.alert(msg, { icon: this.icon[icon] })
+            return layer.alert(msg, { icon: this.icon[icon], title: title}, done)
         }
     },
 
@@ -48,6 +48,14 @@ var popup = {
             area: [width + 'px', height + 'px'],
             content: $('#' + id)
         })
+    },
+
+    ask: function (question, yes = function () { }, title = "提示", btn = ['确定', '取消'], no = function () { }) {
+        layer.confirm(question, {
+            title: title,
+            icon: this.icon.ask,
+            btn: btn
+        }, yes, no);
     }
 
 }

@@ -21,11 +21,17 @@
             <input type="submit" class="btn btn-orange" value="搜索">
         </form>
         <a href="admin.html">后台</a>
-        <div class="right">
+        <div class="right user-not-login">
             <button class="btn btn-green" id="user-login">登录</button>
         </div>
-        <div class="nbtn">
+        <div class="nbtn user-not-login">
             <button class="btn btn-green" id="user-reg">注册</button>
+        </div>
+        <div class="right user-already-login">
+            <button class="btn btn-green" id="user-info"></button>
+        </div>
+        <div class="nbtn user-already-login">
+            <button class="btn btn-orange" id="user-exit">退出</button>
         </div>
     </nav>
     <main>
@@ -141,6 +147,7 @@
 
 <script src="./static/common/data.js"></script>
 <script src="./static/common/jquery.js"></script>
+<script src="./static/common/jquery.md5.js"></script>
 <script src="./static/common/vue.js"></script>
 <script src="./static/common/function.js"></script>
 <script src="./static/common/layer/layer.js"></script>

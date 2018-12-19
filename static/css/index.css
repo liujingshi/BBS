@@ -37,4 +37,14 @@
     align-items: center;
 }
 
+.postback {
+    background: url(../images/postback.jpg) no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    font-size: 30px;
+    text-shadow: 3px 3px 3px gray;
+}
 
+.postback > span {
+    margin-top: -100px;
+}

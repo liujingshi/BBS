@@ -9,15 +9,10 @@ var kind_vue = new Vue({
 })
 
 var slider = [
-    { src: "./static/images/1.png", title: "梅菜扣肉" },
-    { src: "./static/images/2.png", title: "宫保鸡丁" },
-    { src: "./static/images/3.png", title: "西红柿炒鸡蛋" },
-    { src: "./static/images/4.png", title: "剁椒鱼头" },
-    { src: "./static/images/5.png", title: "皮蛋豆腐" },
-    { src: "./static/images/6.png", title: "酸辣土豆丝" },
-    { src: "./static/images/7.png", title: "四喜丸子" },
-    { src: "./static/images/8.png", title: "糖醋排骨" },
-    { src: "./static/images/9.png", title: "麻婆豆腐" }
+    { src: "./static/images/1.jpg", title: "圣诞" },
+    { src: "./static/images/2.jpg", title: "雪天" },
+    { src: "./static/images/3.jpg", title: "城堡" },
+    { src: "./static/images/4.jpg", title: "元旦" }
 ]
 
 var slider_vue = new Vue({
